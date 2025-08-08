@@ -45,15 +45,39 @@ print("\nDescriptive Statistics:\n", df.describe())
 # -----------------------------
 # 4. Box Plots (Lifestyle Impact on Happiness)
 # Get all categorical (object or category dtype) columns
-categorical_cols = df.select_dtypes(include=['object', 'category']).columns.tolist()
+# categorical_cols = df.select_dtypes(include=['object', 'category']).columns.tolist()
 
-# Loop through each and plot boxplot against Happiness Score
+# # Loop through each and plot boxplot against Happiness Score
+# for col in categorical_cols:
+#     if col != 'Happiness Score':  # Avoid if 'Happiness Score' is accidentally in the list
+#         plt.figure(figsize=(7, 4))
+#         sns.boxplot(x=col, y='Happiness Score', data=df)
+#         plt.xticks(rotation=45)
+#         plt.title(f'Happiness Score by {col}')
+#         plt.tight_layout()
+#         plt.show()
+
+
+from sklearn.preprocessing import LabelEncoder
+
+# Make a copy to avoid changing original
+df_encoded = df.copy()
+
+# Label encode all categorical features
+categorical_cols = df.select_dtypes(include=['object', 'category']).columns
+le = LabelEncoder()
+
 for col in categorical_cols:
-    if col != 'Happiness Score':  # Avoid if 'Happiness Score' is accidentally in the list
-        plt.figure(figsize=(7, 4))
-        sns.boxplot(x=col, y='Happiness Score', data=df)
-        plt.xticks(rotation=45)
-        plt.title(f'Happiness Score by {col}')
-        plt.tight_layout()
-        plt.show()
+    df_encoded[col] = le.fit_transform(df_encoded[col].astype(str))  # convert NaNs and non-str to str
+
+# Now get correlation of all features (including encoded ones)
+corr_matrix = df_encoded.corr()
+
+# Plot heatmap
+plt.figure(figsize=(12, 10))
+sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', fmt=".2f")
+plt.title("Correlation Heatmap (Numerical + Encoded Categorical Features)")
+plt.tight_layout()
+plt.show()
+
 
