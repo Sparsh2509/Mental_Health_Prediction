@@ -1,203 +1,30 @@
-This dataset consists of 50,000 entries with 17 fields. 
-Below is a breakdown of each field, including its meaning, data type, and relevance to mental health analysis. 
+Dataset Details
 
-1. User_ID
+Rows: 3000
+Columns: 12
 
-📌 Description: Unique identifier for each individual in the dataset.
-📌 Data Type: Integer (int64)
-📌 Example Values: 1, 2, 3, 4, ...
-📌 Relevance: Used for indexing; not used in analysis.
+Features :
 
+(1) Country – Country of residence (categorical).
 
-2. Age
+(2) Age – Age of the individual (numeric).
 
-📌 Description: Age of the individual.
-📌 Data Type: Integer (int64)
-📌 Example Values: 18, 25, 36, 45, 60
-📌 Relevance:
+(3) Gender – Gender of the individual (Male, Female, Other).
 
-Helps analyze mental health trends across age groups.
-Can be used for age-based predictions in ML models.
+(4) Exercise Level – Physical activity level (Low, Moderate, High).
 
+(5) Diet Type – Dietary habit (Balanced, Vegetarian, Vegan, etc.).
 
-3. Gender
+(6) Sleep Hours – Average sleep duration in hours per day (float).
 
-📌 Description: Gender identity of the individual.
-📌 Data Type: Categorical (object)
-📌 Example Values:
+(7) Stress Level – Reported stress levels (Low, Medium, High).
 
-Male, Female, Non-binary, Prefer not to say
-📌 Relevance:
-Gender plays a key role in mental health studies.
-Helps in demographic-based sentiment analysis.
+(8) Mental Health Condition – Diagnosed mental health condition (None, Depression, Anxiety, PTSD, etc.).
 
+(9) Work Hours per Week – Average weekly working hours (integer).
 
-4. Occupation
+(10) Screen Time per Day (Hours) – Average daily screen usage in hours (float).
 
-📌 Description: Employment sector of the individual.
-📌 Data Type: Categorical (object)
-📌 Example Values:
+(11) Social Interaction Score – Score (0–10) reflecting frequency & quality of social interactions (numeric).
 
-IT, Finance, Healthcare, Education, Engineering, Sales, Other
-📌 Relevance:
-Certain professions may have higher stress levels.
-Helps correlate mental health with job types.
-
-
-5. Country
-
-📌 Description: The country where the individual resides.
-📌 Data Type: Categorical (object)
-📌 Example Values:
-
-USA, India, UK, Canada, Australia, Germany, Other
-📌 Relevance:
-Different countries have varying mental health support systems.
-Useful for cross-cultural mental health analysis.
-
-
-6. Mental_Health_Condition
-
-📌 Description: Indicates if the person has a mental health condition.
-📌 Data Type: Categorical (object)
-📌 Example Values:
-
-Yes, No
-📌 Relevance:
-The target variable for mental health research.
-Helps in predictive modeling.
-
-
-7. Severity
-
-📌 Description: Severity level of mental health condition (if applicable).
-📌 Data Type: Categorical (object)
-📌 Example Values:
-
-Low, Medium, High, None
-📌 Relevance:
-Helps classify mental health conditions.
-Can be used for risk prediction models.
-
-
-
-8. Consultation_History
-
-📌 Description: Indicates if the person has consulted a mental health professional.
-📌 Data Type: Categorical (object)
-📌 Example Values:
-
-Yes, No
-📌 Relevance:
-Helps analyze the accessibility of mental health services.
-Important for identifying trends in seeking mental health support.
-
-
-9. Stress_Level
-
-📌 Description: Self-reported stress level.
-📌 Data Type: Categorical (object)
-📌 Example Values:
-
-Low, Medium, High
-📌 Relevance:
-High stress is a major mental health risk factor.
-Helps in correlation studies with lifestyle factors.
-
-
-
-10. Sleep_Hours
-
-📌 Description: Average number of hours of sleep per day.
-📌 Data Type: Float (float64)
-📌 Example Values:
-
-4.7, 6.8, 7.1, 8.2
-📌 Relevance:
-Sleep is directly linked to mental health.
-Can be used in predictive models for stress and anxiety detection.
-
-
-11. Work_Hours
-
-📌 Description: Number of hours worked per week.
-📌 Data Type: Integer (int64)
-📌 Example Values:
-
-30, 45, 50, 60, 80
-📌 Relevance:
-Overworking can lead to burnout and mental health issues.
-Important for work-life balance studies.
-
-
-12. Physical_Activity_Hours
-
-📌 Description: Number of hours spent on physical activity per week.
-📌 Data Type: Integer (int64)
-📌 Example Values:
-
-0, 2, 5, 8, 10
-📌 Relevance:
-Regular exercise reduces stress and improves mental health.
-Can be used in mental health intervention strategies.
-
-
-13. Social_Media_Usage
-
-📌 Description: Average time spent on social media per day (hours).
-📌 Data Type: Float (float64)
-📌 Example Values:
-
-1.5, 3.0, 4.2, 6.0
-📌 Relevance:
-High social media usage is linked to anxiety and depression.
-Important for mental well-being studies.
-
-
-14. Diet_Quality
-
-📌 Description: Self-reported diet quality.
-📌 Data Type: Categorical (object)
-📌 Example Values:
-
-Healthy, Average, Unhealthy
-📌 Relevance:
-Diet plays a key role in mental health.
-Helps in nutritional psychiatry research.
-
-
-15. Smoking_Habit
-
-📌 Description: Smoking frequency classification.
-📌 Data Type: Categorical (object)
-📌 Example Values:
-
-Non-Smoker, Occasional Smoker, Regular Smoker, Heavy Smoker
-📌 Relevance:
-Smoking is associated with stress and depression.
-Important for public health research.
-
-
-16. Alcohol_Consumption
-
-📌 Description: Alcohol drinking frequency classification.
-📌 Data Type: Categorical (object)
-📌 Example Values:
-
-Non-Drinker, Social Drinker, Regular Drinker, Heavy Drinker
-📌 Relevance:
-High alcohol consumption is linked to mental health disorders.
-Useful for addiction studies.
-
-
-17. Medication_Usage
-
-📌 Description: Whether the individual takes mental health-related medications.
-📌 Data Type: Categorical (object)
-📌 Example Values:
-
-Yes, No
-📌 Relevance:
-Helps track medication trends for mental health treatment.
-Useful for medical research and intervention studies.
- 
+(12) Happiness Score – Self-reported happiness score (0–10) (numeric).

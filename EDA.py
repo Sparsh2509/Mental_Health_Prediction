@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the dataset
-df = pd.read_csv("D:\Sparsh\ML_Projects\Mental_Health_Prediction\Dataset\mental_health_data final data.csv")  # Update path if needed
+df = pd.read_csv("D:\Sparsh\ML_Projects\Mental_Health_Prediction\Dataset\Mental_Health_Lifestyle_Dataset.csv")  # Update path if needed
 
 # Basic Information
 print("Shape:", df.shape)
